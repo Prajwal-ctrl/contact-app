@@ -24,7 +24,7 @@ deploy:
   before_script:
     - chmod 400 $SSH_PRIVATE_KEY
   script:
-      - ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY ubuntu@16.170.253.177 "
+      - ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY ubuntu@13.60.31.137 "
         docker login -u $REGISTRY_USER -p $REGISTRY_PASS &&
         sudo chmod 666 /var/run/docker.sock &&
         docker run -d -p 5173:5173 $IMAGE_NAME:$IMAGE_TAG"
